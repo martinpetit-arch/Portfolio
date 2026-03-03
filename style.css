@@ -197,6 +197,23 @@ h3 {
     text-align: center;
 }
 
+/* ===== HTML PAGES SCROLL SECTION ===== */
+.html-pages-scroll {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.html-pages-scroll img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
 /* ===== PARCOURS SECTION ===== */
 .parcours-timeline {
     display: grid;
@@ -237,6 +254,73 @@ h3 {
     color: #666;
     font-size: 15px;
     line-height: 1.6;
+}
+
+/* ===== PARCOURS HORIZONTAL ===== */
+.parcours-horizontal {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding-bottom: 30px;
+    position: relative;
+    align-items: flex-start;
+}
+
+.parcours-horizontal::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background-color: #2a3f5f;
+    z-index: 0;
+    transform: translateY(-50%);
+}
+
+.parcours-card {
+    flex-shrink: 0;
+    background: white;
+    border-radius: 8px;
+    padding: 15px 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    min-width: 160px;
+    max-width: 160px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+.parcours-card .parcours-year {
+    font-size: 18px;
+    color: #2a3f5f;
+    margin-bottom: 8px;
+    width: auto;
+    padding: 0;
+}
+
+.parcours-card h4 {
+    margin: 0 0 8px 0;
+    font-size: 12px;
+    font-weight: 600;
+    color: #333;
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+.parcours-card p {
+    margin: 0;
+    font-size: 11px;
+    line-height: 1.4;
+    color: #666;
+}
+
+.parcours-card em {
+    font-style: italic;
+    color: #666;
+    font-weight: normal;
 }
 
 /* ===== CONTACT SECTION ===== */
@@ -343,10 +427,10 @@ h3 {
 .project-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 40px;
+    gap: 30px;
     align-items: start;
     background: white;
-    padding: 30px;
+    padding: 20px;
     border-radius: 8px;
 }
 
@@ -450,6 +534,15 @@ footer p {
     .parcours-year {
         width: auto;
     }
+
+    .parcours-horizontal {
+        gap: 20px;
+    }
+
+    .parcours-card {
+        min-width: 240px;
+        padding: 25px 20px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -511,5 +604,35 @@ footer p {
 
     .projects-detailed {
         gap: 40px;
+    }
+
+    .parcours-horizontal {
+        gap: 15px;
+        padding-bottom: 20px;
+    }
+
+    .parcours-horizontal::before {
+        top: 45%;
+        height: 2px;
+    }
+
+    .parcours-card {
+        min-width: 200px;
+        padding: 20px 15px;
+        border-radius: 8px;
+    }
+
+    .parcours-card .parcours-year {
+        font-size: 22px;
+        margin-bottom: 10px;
+    }
+
+    .parcours-card h4 {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .parcours-card p {
+        font-size: 12px;
     }
 }
