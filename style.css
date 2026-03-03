@@ -491,6 +491,11 @@ h3 {
     border-radius: 5px;
 }
 
+/* Styles spécifiques à la page Photoshop */
+.photoshop-page .project-content img {
+    max-width: 50%;
+}
+
 .project-text p {
     margin: 0 0 20px 0;
     font-size: 15px;
