@@ -1,19 +1,28 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
+    padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #333;
     line-height: 1.6;
     background-color: #fff;
+    overflow-x: hidden;
 }
 
 html {
     scroll-behavior: smooth;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 .container {
     max-width: 1140px;
     margin: 0 auto;
     padding: 0 20px;
+    width: 100%;
 }
 
 /* ===== HEADER ===== */
@@ -300,11 +309,11 @@ h3 {
 /* ===== PARCOURS HORIZONTAL ===== */
 .parcours-horizontal {
     display: flex;
-    gap: 15px;
+    gap: 40px;
     padding-bottom: 30px;
     position: relative;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     width: 100%;
 }
 
@@ -312,14 +321,12 @@ h3 {
     content: '';
     position: absolute;
     top: 50%;
-    left: 0;
-    right: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
     height: 3px;
     background-color: #2a3f5f;
     z-index: 0;
-    transform: translateY(-50%);
     width: 100vw;
-    margin-left: calc(-50vw + 50%);
 }
 
 .parcours-card {
@@ -514,6 +521,7 @@ h3 {
     width: 100%;
     height: auto;
     display: block;
+    max-width: 100%;
 }
 
 .project-text p {
