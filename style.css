@@ -25,10 +25,16 @@ html {
     width: 100%;
 }
 
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+}
+
 /* ===== HEADER ===== */
 header {
     background: #475569;
-    padding: 25px 0;
+    padding: 15px 0;
     border-bottom: 1px solid #334155;
     position: sticky;
     top: 0;
@@ -54,7 +60,9 @@ nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    gap: 80px;
+    gap: 60px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 nav ul li a {
@@ -74,11 +82,13 @@ nav ul li a:hover {
 .section-white {
     background-color: #ffffff;
     padding: 30px 0;
+    scroll-margin-top: 80px;
 }
 
 .section-gray {
     background-color: #ffffff;
     padding: 30px 0;
+    scroll-margin-top: 80px;
 }
 
 /* Project intro styling */
@@ -146,6 +156,18 @@ h3 {
     margin: 0;
 }
 
+@media (max-width: 768px) {
+    .text-wrapper p {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .text-wrapper p {
+        font-size: 14px;
+    }
+}
+
 .text-wrapper strong {
     color: #333;
     font-weight: 600;
@@ -167,6 +189,7 @@ h3 {
     max-width: 100% !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
+    gap: 20px;
 }
 
 .portfolio-card {
@@ -337,7 +360,7 @@ h3 {
     border-radius: 8px;
     padding: 25px 20px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    min-width: 200px;
+    min-width: 160px;
     max-width: 200px;
     text-align: center;
     position: relative;
@@ -465,11 +488,11 @@ h3 {
 .projects-detailed {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 60px;
+    gap: 40px;
 }
 
 .project-detail {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 .project-detail h3 {
@@ -490,7 +513,7 @@ h3 {
     height: auto;
     border-radius: 5px;
     display: block;
-    max-width: 70%;
+    max-width: 100%;
     margin: 0 auto;
 }
 
@@ -505,10 +528,23 @@ h3 {
     max-width: 50%;
 }
 
+@media (max-width: 768px) {
+    .photoshop-page .project-content img {
+        max-width: 100%;
+    }
+}
+
+/* Amélioration images Blender sur mobile */
+@media (max-width: 768px) {
+    .blender-page .project-content img {
+        max-width: 100%;
+    }
+}
+
 /* Grille SolidWorks */
 .solidworks-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 15px;
     margin: 15px 0;
 }
@@ -554,7 +590,7 @@ footer {
     list-style: none;
     padding: 0;
     margin: 0 0 30px 0;
-    gap: 30px;
+    gap: 20px;
     flex-wrap: wrap;
 }
 
@@ -655,6 +691,39 @@ footer p {
 }
 
 /* ===== RESPONSIVE ===== */
+/* Tablettes (1024px) */
+@media (max-width: 1024px) {
+    nav ul {
+        gap: 40px;
+    }
+
+    .portfolio-grid-home {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    .presentation-flex {
+        gap: 50px;
+    }
+
+    .project-content {
+        gap: 20px;
+    }
+
+    .carousel-image {
+        height: 300px;
+    }
+
+    .solidworks-carousel {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .solidworks-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Petites tablettes/Grand mobile (768px) */
 @media (max-width: 768px) {
     .presentation-flex {
         flex-direction: column;
@@ -668,8 +737,17 @@ footer p {
     }
 
     nav ul {
-        flex-direction: column;
-        gap: 15px;
+        gap: 20px;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    nav ul li a {
+        font-size: 16px;
+    }
+
+    .portfolio-grid-home {
+        grid-template-columns: repeat(2, 1fr) !important;
     }
 
     .portfolio-category-grid {
@@ -701,30 +779,83 @@ footer p {
     }
 
     .parcours-horizontal {
-        gap: 20px;
+        gap: 15px;
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding: 20px 0;
+    }
+
+    .parcours-horizontal::before {
+        width: 100vw;
     }
 
     .parcours-card {
-        min-width: 240px;
-        padding: 25px 20px;
+        min-width: 160px;
+        padding: 20px 15px;
+    }
+
+    .carousel-image {
+        height: 250px;
+    }
+
+    .carousel-item h3 {
+        font-size: 20px;
+    }
+
+    .carousel-item p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .carousel-controls {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    .carousel-btn {
+        padding: 10px 15px;
+        font-size: 13px;
+        width: 100%;
+    }
+
+    .solidworks-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contact-form {
+        padding: 25px;
     }
 }
 
+/* Mobile (480px et moins) */
 @media (max-width: 480px) {
     header {
-        padding: 15px 0;
+        padding: 10px 0;
     }
 
     .header-container {
         flex-direction: column;
-        gap: 15px;
+        gap: 8px;
     }
 
     nav ul {
         width: 100%;
         flex-direction: column;
-        gap: 10px;
+        gap: 6px;
         text-align: center;
+        flex-wrap: nowrap;
+    }
+
+    nav ul li {
+        width: 100%;
+    }
+
+    nav ul li a {
+        font-size: 13px;
+        display: block;
+        padding: 5px 0;
     }
 
     .presentation-flex {
@@ -737,68 +868,135 @@ footer p {
         height: auto;
     }
 
+    .portfolio-grid-home {
+        grid-template-columns: 1fr !important;
+        gap: 15px;
+    }
+
+    .portfolio-card-image {
+        height: 200px;
+    }
+
     .contact-form {
-        padding: 20px;
+        padding: 15px;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 16px;
     }
 
     .section-white,
     .section-gray {
-        padding: 50px 0;
+        padding: 30px 0;
     }
 
     h2 {
         font-size: 28px;
-        margin-bottom: 30px;
+        margin-bottom: 20px;
     }
 
     h3 {
         font-size: 20px;
-    }
-
-    nav ul {
-        gap: 20px;
-    }
-
-    nav ul li a {
-        font-size: 16px;
+        margin: 30px 0 20px 0;
     }
 
     .project-content {
-        padding: 20px;
+        padding: 15px;
     }
 
     .projects-detailed {
-        gap: 40px;
+        gap: 30px;
+    }
+
+    .project-content img {
+        max-width: 100%;
     }
 
     .parcours-horizontal {
-        gap: 15px;
-        padding-bottom: 20px;
+        gap: 10px;
+        padding-bottom: 15px;
+        justify-content: flex-start;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
     }
 
     .parcours-horizontal::before {
-        top: 45%;
-        height: 2px;
+        display: none;
     }
 
     .parcours-card {
-        min-width: 200px;
-        padding: 20px 15px;
-        border-radius: 8px;
+        min-width: 140px;
+        max-width: 140px;
+        padding: 15px 10px;
+        font-size: 13px;
     }
 
     .parcours-card .parcours-year {
-        font-size: 22px;
-        margin-bottom: 10px;
+        font-size: 18px;
+        margin-bottom: 8px;
     }
 
     .parcours-card h4 {
-        font-size: 14px;
-        margin-bottom: 10px;
+        font-size: 13px;
+        margin-bottom: 5px;
+        line-height: 1.2;
     }
 
     .parcours-card p {
+        font-size: 11px;
+        line-height: 1.4;
+    }
+
+    .carousel-image {
+        height: 200px;
+    }
+
+    .carousel-controls {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        margin-top: 15px;
+    }
+
+    .carousel-btn {
+        padding: 10px 12px;
         font-size: 12px;
+        width: 100%;
+    }
+
+    .carousel-item h3 {
+        font-size: 18px;
+        margin: 0 0 10px 0;
+    }
+
+    .carousel-item p {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    .solidworks-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .content-section {
+        padding: 15px 0;
+    }
+
+    footer {
+        padding: 30px 0;
+    }
+
+    .footer-nav ul {
+        gap: 10px;
+    }
+
+    .footer-nav a {
+        font-size: 14px;
     }
 }
 
@@ -810,12 +1008,37 @@ footer p {
     align-items: center;
 }
 
+@media (max-width: 768px) {
+    .solidworks-carousel {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .solidworks-carousel {
+        gap: 15px;
+    }
+}
+
 .carousel-image {
     width: 100%;
     height: 400px;
     overflow: hidden;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .carousel-image {
+        height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-image {
+        height: 250px;
+    }
 }
 
 .carousel-image img {
@@ -852,10 +1075,52 @@ footer p {
     margin: 0 0 15px 0;
 }
 
+@media (max-width: 768px) {
+    .carousel-item h3 {
+        font-size: 20px;
+        margin: 0 0 12px 0;
+    }
+
+    .carousel-item p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-item h3 {
+        font-size: 18px;
+        margin: 0 0 10px 0;
+        padding-bottom: 8px;
+    }
+
+    .carousel-item p {
+        font-size: 13px;
+        line-height: 1.5;
+        margin: 0;
+    }
+}
+
 .carousel-controls {
     display: flex;
     gap: 15px;
     margin-top: 30px;
+}
+
+@media (max-width: 768px) {
+    .carousel-controls {
+        gap: 10px;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-controls {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        margin-top: 15px;
+    }
 }
 
 .carousel-btn {
@@ -868,6 +1133,21 @@ footer p {
     font-weight: 600;
     cursor: pointer;
     transition: background-color 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .carousel-btn {
+        padding: 10px 15px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-btn {
+        padding: 8px 12px;
+        font-size: 12px;
+        width: 100%;
+    }
 }
 
 .carousel-btn:hover {
