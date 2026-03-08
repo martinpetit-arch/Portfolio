@@ -125,8 +125,8 @@ h3 {
 }
 
 .image-wrapper img {
-    width: 250px;
-    height: 320px;
+    width: 251px;
+    height: 321px;
     object-fit: cover;
     box-shadow: none;
     border-radius: 0;
@@ -663,7 +663,7 @@ footer p {
 
     .image-wrapper img {
         width: 100%;
-        max-width: 320px;
+        max-width: 321px;
         height: auto;
     }
 
