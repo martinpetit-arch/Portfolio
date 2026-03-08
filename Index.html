@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Martin Petit | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="logo">Martin Petit</div>
+            <nav>
+                <ul>
+                    <li><a href="#Presentation">Présentation</a></li>
+                    <li><a href="#Portfolio">Portfolio</a></li>
+                    <li><a href="#Parcours">Parcours</a></li>
+                    <li><a href="#Contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="Presentation" class="section-white">
+        <div class="container">
+            <h2 class="title-center">Présentation</h2>
+            <div class="presentation-flex">
+                <div class="image-wrapper">
+                    <img src="Image/IMG_9733.jpg" alt="Martin Petit">
+                </div>
+                <div class="text-wrapper">
+                    <p>Je m'appelle <strong>Martin Petit</strong>, j'ai 20 ans et je suis actuellement étudiant en <strong>BUT MMI</strong> (Métiers du Multimédia et de l'Internet). J'ai commencé les études supérieures par un BTS CRSA (Conception et réalisation de Systèmes Automatiques) mais une fois mon diplôme obtenu, j'ai décidé de me réorienter dans un domaine plus artistique. Passionné par la 3D et aimant consacrer mon temps aux jeux vidéos et au cinéma, je souhaite lier tout ceci dans mon futur travail.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="Portfolio" class="section-gray">
+        <div class="container">
+            <h2 class="title-center">Portfolio</h2>
+            <div class="portfolio-cards-grid portfolio-grid-home">
+                <div class="portfolio-card">
+                    <a href="htmlcss.html" class="portfolio-card-link">
+                        <div class="portfolio-card-header">
+                            <div class="portfolio-card-image">
+                                <img src="Image/HTML Part1.png" alt="HTML/CSS">
+                            </div>
+                            <div class="portfolio-card-desc">
+                                <p>HTML/CSS</p>
+                            </div>
+                        </div>
+                        <h3>HTML/CSS</h3>
+                    </a>
+                </div>
+                <div class="portfolio-card">
+                    <a href="photoshop.html" class="portfolio-card-link">
+                        <div class="portfolio-card-header">
+                            <div class="portfolio-card-image">
+                                <img src="Image/Photoshop.png" alt="Photoshop">
+                            </div>
+                            <div class="portfolio-card-desc">
+                                <p>Photoshop</p>
+                            </div>
+                        </div>
+                        <h3>Photoshop</h3>
+                    </a>
+                </div>
+                <div class="portfolio-card">
+                    <a href="blender.html" class="portfolio-card-link">
+                        <div class="portfolio-card-header">
+                            <div class="portfolio-card-image">
+                                <img src="Image/Chambre.png" alt="Modélisation 3D">
+                            </div>
+                            <div class="portfolio-card-desc">
+                                <p>Modélisation 3D</p>
+                            </div>
+                        </div>
+                        <h3>Modélisation 3D</h3>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="Parcours" class="section-white">
+        <div class="container">
+            <h2 class="title-center">Mon parcours</h2>
+            <div class="parcours-horizontal">
+                <div class="parcours-card">
+                    <div class="parcours-year">2020</div>
+                    <h4>Collège Jules Ferry (Langon)</h4>
+                    <p>Obtention du Brevet <em>Mention bien</em></p>
+                </div>
+                <div class="parcours-card">
+                    <div class="parcours-year">2022</div>
+                    <h4>Lycée Jean Moulin (Langon)</h4>
+                    <p>1ère STI2D (Sciences et Technologies de l'Industrie et du Développement Durable)<br><em>Moyenne général: 12/20</em></p>
+                </div>
+                <div class="parcours-card">
+                    <div class="parcours-year">2023</div>
+                    <h4>Lycée Jean Moulin (Langon)</h4>
+                    <p>Terminale STI2D (Sciences et Technologies de l'Industrie et du Développement Durable)<br>Obtention du BAC <em>Mention BIEN</em></p>
+                </div>
+                <div class="parcours-card">
+                    <div class="parcours-year">2021</div>
+                    <h4>Lycée Alfred Kastler (Talence)</h4>
+                    <p>1ère année BTS CRSA (Conception et Réalisation de Système Automatisé)<br><em>semestre 1: 14.8/20</em><br><em>semestre 2: 15.1/20</em></p>
+                </div>
+                <div class="parcours-card">
+                    <div class="parcours-year">2025</div>
+                    <h4>Lycée Alfred Kastler (Talence)</h4>
+                    <p>BTS CRSA (Conception et Réalisation de Système Automatisé)<br>Obtention du BTS<br><em>Moyenne général: 14/20</em></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="Contact" class="section-gray">
+        <div class="container">
+            <h2 class="title-center">Contact</h2>
+            <div class="contact-form-wrapper">
+                <form class="contact-form" action="https://formspree.io/f/xeerogld" method="POST">
+                    <div class="form-group">
+                        <label for="nom">Nom</label>
+                        <input type="text" id="nom" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Envoyer</button>
+                </form>
+            </div>
+            <!-- Popup de confirmation -->
+            <div id="successPopup" class="popup-overlay">
+                <div class="popup-content">
+                    <p>Votre message a bien été envoyé</p>
+                    <button class="popup-btn" onclick="closePopup()">Fermer</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="#Presentation">Présentation</a></li>
+                    <li><a href="#Portfolio">Portfolio</a></li>
+                    <li><a href="#Parcours">Parcours</a></li>
+                    <li><a href="#Contact">Contact</a></li>
+                </ul>
+                <p class="footer-linkedin"><a href="https://www.linkedin.com/in/martin-petit-b996a3388/" target="_blank">Mon Linkedin</a></p>
+            </nav>
+            <p>&copy; 2025 Martin Petit. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Fonctions pour la popup
+        function showPopup() {
+            document.getElementById('successPopup').classList.add('active');
+        }
+
+        function closePopup() {
+            document.getElementById('successPopup').classList.remove('active');
+        }
+
+        // Fermer la popup quand on clique en dehors
+        document.getElementById('successPopup').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closePopup();
+            }
+        });
+
+        // Gérer la soumission du formulaire Formspree
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            // Afficher la popup
+            setTimeout(showPopup, 500);
+            // Fermer la popup après 3 secondes
+            setTimeout(closePopup, 4000);
+            // Laisser le formulaire se soumettre normalement à Formspree
+        });
+    </script>
+
+</body>
+</html>
