@@ -1221,6 +1221,39 @@ footer p {
     order: -1;
 }
 
+/* ===== PHOTO GALLERY SIMPLE (non-carousel) ===== */
+.photo-gallery-simple {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin: 30px 0 50px 0;
+    padding: 8px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    flex-wrap: nowrap;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.photo-gallery-simple-img {
+    height: 300px;
+    object-fit: contain;
+    border-radius: 4px;
+    display: block;
+    flex-shrink: 0;
+}
+
+.photo-gallery-simple-2 .photo-gallery-simple-img {
+    flex: 0 0 calc(50% - 8px);
+}
+
+.photo-gallery-simple-3 .photo-gallery-simple-img {
+    flex: 0 0 calc(33.33% - 11px);
+}
+
 /* ===== PHOTO TEXT SECTION ===== */
 .photo-text-section {
     margin-top: 30px;

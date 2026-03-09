@@ -33,57 +33,6 @@
 
     <section class="section-gray">
         <div class="container">
-            <!-- Carrousel Studio -->
-            <h3>Studio</h3>
-            <div class="photo-carousel-container">
-                <button class="carousel-btn carousel-btn-prev" onclick="scrollCarousel(-1, 1)">❮</button>
-                
-                <div class="carousel-wrapper">
-                    <div class="carousel-track" id="carouselTrack1">
-                        <img src="Image/Projet photo/1.jpg" alt="Photo 1" class="carousel-img">
-                        <img src="Image/Projet photo/2.jpg" alt="Photo 2" class="carousel-img">
-                        <img src="Image/Projet photo/3.jpg" alt="Photo 3" class="carousel-img">
-                        <img src="Image/Projet photo/4.jpg" alt="Photo 4" class="carousel-img">
-                    </div>
-                </div>
-                
-                <button class="carousel-btn carousel-btn-next" onclick="scrollCarousel(1, 1)">❯</button>
-            </div>
-
-            <!-- Carrousel Paysage/Architecture -->
-            <h3>Paysage/Architecture</h3>
-            <div class="photo-carousel-container">
-                <button class="carousel-btn carousel-btn-prev" onclick="scrollCarousel(-1, 2)">❮</button>
-                
-                <div class="carousel-wrapper">
-                    <div class="carousel-track" id="carouselTrack2">
-                        <img src="Image/Projet photo/5.jpg" alt="Photo 5" class="carousel-img">
-                        <img src="Image/Projet photo/6.jpg" alt="Photo 6" class="carousel-img">
-                        <img src="Image/Projet photo/7.jpg" alt="Photo 7" class="carousel-img">
-                        <img src="Image/Projet photo/8.jpg" alt="Photo 8" class="carousel-img">
-                    </div>
-                </div>
-                
-                <button class="carousel-btn carousel-btn-next" onclick="scrollCarousel(1, 2)">❯</button>
-            </div>
-
-            <!-- Carrousel Portrait -->
-            <h3>Portrait</h3>
-            <div class="photo-carousel-container">
-                <button class="carousel-btn carousel-btn-prev" onclick="scrollCarousel(-1, 3)">❮</button>
-                
-                <div class="carousel-wrapper">
-                    <div class="carousel-track" id="carouselTrack3">
-                        <img src="Image/Projet photo/9.jpg" alt="Photo 9" class="carousel-img">
-                        <img src="Image/Projet photo/10.jpg" alt="Photo 10" class="carousel-img">
-                        <img src="Image/Projet photo/11.jpg" alt="Photo 11" class="carousel-img">
-                        <img src="Image/Projet photo/12.jpg" alt="Photo 12" class="carousel-img">
-                    </div>
-                </div>
-                
-                <button class="carousel-btn carousel-btn-next" onclick="scrollCarousel(1, 3)">❯</button>
-            </div>
-
             <!-- Carrousel Street photo -->
             <h3>Street photo</h3>
             <div class="photo-carousel-container">
@@ -91,13 +40,48 @@
                 
                 <div class="carousel-wrapper">
                     <div class="carousel-track" id="carouselTrack4">
-                        <img src="Image/Projet photo/13.jpg" alt="Photo 13" class="carousel-img">
-                        <img src="Image/Projet photo/14.jpg" alt="Photo 14" class="carousel-img">
-                        <img src="Image/Projet photo/15.jpg" alt="Photo 15" class="carousel-img">
+                        <img src="Image/Projet photo/Street1.jpg" alt="Street 1" class="carousel-img">
+                        <img src="Image/Projet photo/Street2.jpg" alt="Street 2" class="carousel-img">
+                        <img src="Image/Projet photo/Street3.jpg" alt="Street 3" class="carousel-img">
+                        <img src="Image/Projet photo/Street4.jpg" alt="Street 4" class="carousel-img">
+                        <img src="Image/Projet photo/Street5.jpg" alt="Street 5" class="carousel-img">
+                        <img src="Image/Projet photo/Street6.jpg" alt="Street 6" class="carousel-img">
                     </div>
                 </div>
                 
                 <button class="carousel-btn carousel-btn-next" onclick="scrollCarousel(1, 4)">❯</button>
+            </div>
+
+            <!-- Architecture (galerie simple) -->
+            <h3>Architecture</h3>
+            <div class="photo-gallery-simple photo-gallery-simple-2">
+                <img src="Image/Projet photo/Archi1.jpg" alt="Architecture 1" class="photo-gallery-simple-img">
+                <img src="Image/Projet photo/Archi2.jpg" alt="Architecture 2" class="photo-gallery-simple-img">
+            </div>
+
+            <!-- Carrousel Studio -->
+            <h3>Studio</h3>
+            <div class="photo-carousel-container">
+                <button class="carousel-btn carousel-btn-prev" onclick="scrollCarousel(-1, 1)">❮</button>
+                
+                <div class="carousel-wrapper">
+                    <div class="carousel-track" id="carouselTrack1">
+                        <img src="Image/Projet photo/Studio1.jpg" alt="Studio 1" class="carousel-img">
+                        <img src="Image/Projet photo/Studio2.jpg" alt="Studio 2" class="carousel-img">
+                        <img src="Image/Projet photo/Studio3.jpg" alt="Studio 3" class="carousel-img">
+                        <img src="Image/Projet photo/Studio4.jpg" alt="Studio 4" class="carousel-img">
+                    </div>
+                </div>
+                
+                <button class="carousel-btn carousel-btn-next" onclick="scrollCarousel(1, 1)">❯</button>
+            </div>
+
+            <!-- Portrait (galerie simple) -->
+            <h3>Portrait</h3>
+            <div class="photo-gallery-simple photo-gallery-simple-3">
+                <img src="Image/Projet photo/Portrait2.jpg" alt="Portrait 2" class="photo-gallery-simple-img">
+                <img src="Image/Projet photo/Portrait1.jpg" alt="Portrait 1" class="photo-gallery-simple-img">
+                <img src="Image/Projet photo/Portrait3.jpg" alt="Portrait 3" class="photo-gallery-simple-img">
             </div>
         </div>
     </section>
@@ -152,9 +136,7 @@
     <script>
         const carousels = {
             1: { position: 0, items: 4, itemWidth: 100 / 3 },
-            2: { position: 0, items: 4, itemWidth: 100 / 3 },
-            3: { position: 0, items: 4, itemWidth: 100 / 3 },
-            4: { position: 0, items: 3, itemWidth: 100 / 3 }
+            4: { position: 0, items: 6, itemWidth: 100 / 3 }
         };
         
         function scrollCarousel(direction, carouselNum) {
@@ -163,9 +145,9 @@
             const maxScroll = carousel.items - 3;
             
             if (direction === 1) {
-                carousel.position = Math.min(carousel.position + 1, maxScroll);
+                carousel.position = (carousel.position + 1) % (maxScroll + 1);
             } else {
-                carousel.position = Math.max(carousel.position - 1, 0);
+                carousel.position = (carousel.position - 1 + maxScroll + 1) % (maxScroll + 1);
             }
             
             const translateValue = -(carousel.position * carousel.itemWidth);
