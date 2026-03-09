@@ -33,31 +33,71 @@
 
     <section class="section-gray">
         <div class="container">
-            <!-- Carrousel -->
+            <!-- Carrousel Studio -->
+            <h3>Studio</h3>
             <div class="photo-carousel-container">
-                <button class="carousel-btn carousel-btn-prev" onclick="scrollCarousel(-1)">❮</button>
+                <button class="carousel-btn carousel-btn-prev" onclick="scrollCarousel(-1, 1)">❮</button>
                 
                 <div class="carousel-wrapper">
-                    <div class="carousel-track" id="carouselTrack">
+                    <div class="carousel-track" id="carouselTrack1">
                         <img src="Image/Projet photo/1.jpg" alt="Photo 1" class="carousel-img">
                         <img src="Image/Projet photo/2.jpg" alt="Photo 2" class="carousel-img">
                         <img src="Image/Projet photo/3.jpg" alt="Photo 3" class="carousel-img">
                         <img src="Image/Projet photo/4.jpg" alt="Photo 4" class="carousel-img">
+                    </div>
+                </div>
+                
+                <button class="carousel-btn carousel-btn-next" onclick="scrollCarousel(1, 1)">❯</button>
+            </div>
+
+            <!-- Carrousel Paysage/Architecture -->
+            <h3>Paysage/Architecture</h3>
+            <div class="photo-carousel-container">
+                <button class="carousel-btn carousel-btn-prev" onclick="scrollCarousel(-1, 2)">❮</button>
+                
+                <div class="carousel-wrapper">
+                    <div class="carousel-track" id="carouselTrack2">
                         <img src="Image/Projet photo/5.jpg" alt="Photo 5" class="carousel-img">
                         <img src="Image/Projet photo/6.jpg" alt="Photo 6" class="carousel-img">
                         <img src="Image/Projet photo/7.jpg" alt="Photo 7" class="carousel-img">
                         <img src="Image/Projet photo/8.jpg" alt="Photo 8" class="carousel-img">
+                    </div>
+                </div>
+                
+                <button class="carousel-btn carousel-btn-next" onclick="scrollCarousel(1, 2)">❯</button>
+            </div>
+
+            <!-- Carrousel Portrait -->
+            <h3>Portrait</h3>
+            <div class="photo-carousel-container">
+                <button class="carousel-btn carousel-btn-prev" onclick="scrollCarousel(-1, 3)">❮</button>
+                
+                <div class="carousel-wrapper">
+                    <div class="carousel-track" id="carouselTrack3">
                         <img src="Image/Projet photo/9.jpg" alt="Photo 9" class="carousel-img">
                         <img src="Image/Projet photo/10.jpg" alt="Photo 10" class="carousel-img">
                         <img src="Image/Projet photo/11.jpg" alt="Photo 11" class="carousel-img">
                         <img src="Image/Projet photo/12.jpg" alt="Photo 12" class="carousel-img">
+                    </div>
+                </div>
+                
+                <button class="carousel-btn carousel-btn-next" onclick="scrollCarousel(1, 3)">❯</button>
+            </div>
+
+            <!-- Carrousel Street photo -->
+            <h3>Street photo</h3>
+            <div class="photo-carousel-container">
+                <button class="carousel-btn carousel-btn-prev" onclick="scrollCarousel(-1, 4)">❮</button>
+                
+                <div class="carousel-wrapper">
+                    <div class="carousel-track" id="carouselTrack4">
                         <img src="Image/Projet photo/13.jpg" alt="Photo 13" class="carousel-img">
                         <img src="Image/Projet photo/14.jpg" alt="Photo 14" class="carousel-img">
                         <img src="Image/Projet photo/15.jpg" alt="Photo 15" class="carousel-img">
                     </div>
                 </div>
                 
-                <button class="carousel-btn carousel-btn-next" onclick="scrollCarousel(1)">❯</button>
+                <button class="carousel-btn carousel-btn-next" onclick="scrollCarousel(1, 4)">❯</button>
             </div>
         </div>
     </section>
@@ -110,22 +150,25 @@
     </section>
 
     <script>
-        const itemsPerView = 3;
-        let currentPosition = 0;
-        const track = document.getElementById('carouselTrack');
-        const totalImages = 15;
-        const itemWidth = 100 / itemsPerView; // 33.33
+        const carousels = {
+            1: { position: 0, items: 4, itemWidth: 100 / 3 },
+            2: { position: 0, items: 4, itemWidth: 100 / 3 },
+            3: { position: 0, items: 4, itemWidth: 100 / 3 },
+            4: { position: 0, items: 3, itemWidth: 100 / 3 }
+        };
         
-        function scrollCarousel(direction) {
-            const maxScroll = totalImages - itemsPerView; // 15 - 4 = 11
+        function scrollCarousel(direction, carouselNum) {
+            const carousel = carousels[carouselNum];
+            const track = document.getElementById(`carouselTrack${carouselNum}`);
+            const maxScroll = carousel.items - 3;
             
             if (direction === 1) {
-                currentPosition = Math.min(currentPosition + 1, maxScroll);
+                carousel.position = Math.min(carousel.position + 1, maxScroll);
             } else {
-                currentPosition = Math.max(currentPosition - 1, 0);
+                carousel.position = Math.max(carousel.position - 1, 0);
             }
             
-            const translateValue = -(currentPosition * itemWidth);
+            const translateValue = -(carousel.position * carousel.itemWidth);
             track.style.transform = `translateX(${translateValue}%)`;
         }
     </script>
