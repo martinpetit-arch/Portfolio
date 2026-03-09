@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo | Martin Petit Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="logo">Martin Petit</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html#Presentation">Présentation</a></li>
+                    <li><a href="index.html#Portfolio">Portfolio</a></li>
+                    <li><a href="index.html#Parcours">Parcours</a></li>
+                    <li><a href="index.html#Contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="section-white">
+        <div class="container">
+            <h2 class="title-center">Photo</h2>
+            <div class="project-intro">
+                <p>Modifiez ce texte pour ajouter une introduction à votre galerie photographique.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-gray">
+        <div class="container">
+            <!-- Carrousel -->
+            <div class="photo-carousel-container">
+                <button class="carousel-btn carousel-btn-prev" onclick="scrollCarousel(-1)">❮</button>
+                
+                <div class="carousel-wrapper">
+                    <div class="carousel-track" id="carouselTrack">
+                        <img src="Image/Projet photo/1.jpg" alt="Photo 1" class="carousel-img">
+                        <img src="Image/Projet photo/2.jpg" alt="Photo 2" class="carousel-img">
+                        <img src="Image/Projet photo/3.jpg" alt="Photo 3" class="carousel-img">
+                        <img src="Image/Projet photo/4.jpg" alt="Photo 4" class="carousel-img">
+                        <img src="Image/Projet photo/5.jpg" alt="Photo 5" class="carousel-img">
+                        <img src="Image/Projet photo/6.jpg" alt="Photo 6" class="carousel-img">
+                        <img src="Image/Projet photo/7.jpg" alt="Photo 7" class="carousel-img">
+                        <img src="Image/Projet photo/8.jpg" alt="Photo 8" class="carousel-img">
+                        <img src="Image/Projet photo/9.jpg" alt="Photo 9" class="carousel-img">
+                        <img src="Image/Projet photo/10.jpg" alt="Photo 10" class="carousel-img">
+                        <img src="Image/Projet photo/11.jpg" alt="Photo 11" class="carousel-img">
+                        <img src="Image/Projet photo/12.jpg" alt="Photo 12" class="carousel-img">
+                        <img src="Image/Projet photo/13.jpg" alt="Photo 13" class="carousel-img">
+                        <img src="Image/Projet photo/14.jpg" alt="Photo 14" class="carousel-img">
+                        <img src="Image/Projet photo/15.jpg" alt="Photo 15" class="carousel-img">
+                    </div>
+                </div>
+                
+                <button class="carousel-btn carousel-btn-next" onclick="scrollCarousel(1)">❯</button>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const itemsPerView = 3;
+        let currentPosition = 0;
+        const track = document.getElementById('carouselTrack');
+        const totalImages = 15;
+        const itemWidth = 100 / itemsPerView; // 33.33
+        
+        function scrollCarousel(direction) {
+            const maxScroll = totalImages - itemsPerView; // 15 - 4 = 11
+            
+            if (direction === 1) {
+                currentPosition = Math.min(currentPosition + 1, maxScroll);
+            } else {
+                currentPosition = Math.max(currentPosition - 1, 0);
+            }
+            
+            const translateValue = -(currentPosition * itemWidth);
+            track.style.transform = `translateX(${translateValue}%)`;
+        }
+    </script>
+
+</body>
+</html>
