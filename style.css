@@ -1348,7 +1348,7 @@ footer p {
 @media (max-width: 1024px) {
     .photo-carousel-container {
         gap: 0;
-        padding: 0 50px;
+        padding: 0 30px;
     }
 
     .carousel-wrapper {
@@ -1379,7 +1379,7 @@ footer p {
         flex-direction: column;
         gap: 15px;
         margin: 30px auto;
-        padding: 0 50px;
+        padding: 0 20px;
         position: relative;
     }
 
@@ -1450,7 +1450,7 @@ footer p {
         flex-direction: column;
         gap: 10px;
         margin: 20px 0;
-        padding: 0 40px;
+        padding: 0 15px;
         position: relative;
     }
 
@@ -1499,11 +1499,11 @@ footer p {
     }
 
     .carousel-btn-prev {
-        left: 5px;
+        left: 0px;
     }
 
     .carousel-btn-next {
-        right: 5px;
+        right: 0px;
     }
 
     .photo-text-section {
