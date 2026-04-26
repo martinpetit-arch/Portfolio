@@ -25,11 +25,151 @@
     <section class="section-white">
         <div class="container">
             <h2 class="title-center">Showtime</h2>
-            <div class="project-intro">
-                <p>Showtime est un projet réalisé sur 2 semaines dans lequel nous devions créer l'épisode pilote d'une émission TV. Pour ce projet, plusieurs rôles m'ont été attribué comme : Assistant rédacteur, Monteur, Ingénieur son, Cadreur et Script + Voix off.</p>
+            
+            <p style="text-align: center; max-width: 800px; margin: 30px auto 50px; color: #666; font-size: 15px; line-height: 1.8;">
+                Nous étions une jeunes équipes de 13 étudiants cherchant à créer un épisode pilote pour une émission TV, nous avons eu 2 semaines pour le faire. Nous avons décidé de partir sur la vie nocturne à Bordeaux pour ce premier opus.
+            </p>
+            
+            <!-- NOTRE ORGANISATION -->
+            <h3 class="title-center" style="margin: 60px 0 30px 0;">Notre organisation</h3>
+            
+            <!-- MÉTHODOLOGIE - CARDS CLIQUABLES -->
+            <div class="methodology-cards">
+                <div class="methodology-card" onclick="selectPhase(1)">
+                    <div class="card-number">1</div>
+                    <h4>Conception</h4>
+                </div>
+                <div class="methodology-card" onclick="selectPhase(2)">
+                    <div class="card-number">2</div>
+                    <h4>Technique</h4>
+                </div>
+                <div class="methodology-card" onclick="selectPhase(3)">
+                    <div class="card-number">3</div>
+                    <h4>Production</h4>
+                </div>
+                <div class="methodology-card" onclick="selectPhase(4)">
+                    <div class="card-number">4</div>
+                    <h4>Post-Prod</h4>
+                </div>
+                <div class="methodology-card" onclick="selectPhase(5)">
+                    <div class="card-number">5</div>
+                    <h4>Finalisation</h4>
+                </div>
+            </div>
+
+            <!-- CONTENU DYNAMIQUE DES PHASES -->
+            <div class="phase-content" id="phase-content">
+                <div id="phase-1" class="phase-item active">
+                    <div class="phase-image">
+                        <img src="Image/Image conception.png" alt="Phase 1 - Conception">
+                    </div>
+                    <div class="phase-text">
+                        <h4 class="phase-title">Conception & Scénario</h4>
+                        <p>Brainstorming en équipe pour développer le concept initial et rédiger le script de chacune de nos parties, mise en place de la structure de l'émission et du décor de notre plateau TV.</p>
+                    </div>
+                </div>
+                <div id="phase-2" class="phase-item">
+                    <div class="phase-image">
+                        <img src="Image/Image technique.jpg" alt="Phase 2 - Technique">
+                    </div>
+                    <div class="phase-text">
+                        <h4 class="phase-title">Planification Technique</h4>
+                        <p>Préparation du plateau TV :<br>
+                        - Mise en place du décor,<br>
+                        - Placement des caméras,<br>
+                        - Vérification du son<br>
+                        On a déterminé les emplacements idéales pour nos chroniqueurs et l'invité plateau prévu.</p>
+                    </div>
+                </div>
+                <div id="phase-3" class="phase-item">
+                    <div class="phase-image">
+                        <img src="Image/Image production.png" alt="Phase 3 - Production">
+                    </div>
+                    <div class="phase-text">
+                        <h4 class="phase-title">Production & Tournage</h4>
+                        <p>Commencement du tournage pour :<br>
+                        - Notre court-métrage,<br>
+                        - Notre reportage,<br>
+                        - Notre session fond vert,<br>
+                        - Notre voix off,<br>
+                        - Notre interview
+                        - Notre micro-trottoir.</p>
+                    </div>
+                </div>
+                <div id="phase-4" class="phase-item">
+                    <div class="phase-image">
+                        <img src="Image/Image post-prod.png" alt="Phase 4 - Post-Production">
+                    </div>
+                    <div class="phase-text">
+                        <h4 class="phase-title">Post-Production</h4>
+                        <p>Une fois nos éléments filmé, on a assemblé le tout, mis des sous-titres quand c'étais necessairen synchronisé le son et l'image, fais du motion et un générique pour le lancement de l'émission.</p>
+                    </div>
+                </div>
+                <div id="phase-5" class="phase-item">
+                    <div class="phase-image">
+                        <img src="Image/Image finalisation.png" alt="Phase 5 - Finalisation">
+                    </div>
+                    <div class="phase-text">
+                        <h4 class="phase-title">Finalisation & Révisions</h4>
+                        <p>On a fais plusieurs projections pour voir les problèmes et apporter les ajustements nécessaires, que ce soit des erreurs de montages, des problèmes de synchronisation ou un problème de rythme dans notre émission.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
+    <script>
+        function selectPhase(phaseNum) {
+            // Masquer tous les contenus
+            const phases = document.querySelectorAll('.phase-item');
+            phases.forEach(phase => phase.classList.remove('active'));
+            
+            // Afficher la phase sélectionnée
+            document.getElementById('phase-' + phaseNum).classList.add('active');
+            
+            // Mettre à jour l'active card
+            const cards = document.querySelectorAll('.methodology-card');
+            cards.forEach(card => card.classList.remove('active'));
+            event.target.closest('.methodology-card').classList.add('active');
+        }
+        
+        // Initialiser la première phase au chargement
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('.methodology-card').classList.add('active');
+        });
+    </script>
+
+    <!-- RÉSULTATS & IMPACT -->
     <section class="section-gray">
+        <div class="container">
+            <h3 class="title-center" style="margin-bottom: 40px;">Résultats</h3>
+            
+            <div class="results-container-2x2">
+                <div class="result-card-simple">
+                    <h4>Retour des intervenants</h4>
+                    <p>Le projet est de bonne qualité et est cohérant pour un épisode pilote, la cohérence narrative et l'engagement dans tous les rôles est assumés pour chacun des membres du groupe.</p>
+                </div>
+
+                <div class="result-card-simple">
+                    <h4>Collaboration d'Équipe</h4>
+                    <p>Tout les membres de l'équipe été motivés par le projet ce qui nous a permis d'atteindre un résultat sont on est fier.</p>
+                </div>
+
+                <div class="result-card-simple">
+                    <h4>Qualité Technique</h4>
+                    <p>Nous avons atteint un niveau de qualité technique élevé, avec une production vidéo et audio optimale.</p>
+                </div>
+
+                <div class="result-card-simple">
+                    <h4>Impact Créatif</h4>
+                    <p>Notre thème a été très apprécié par les intervenants grâce à notre implication dans le projet, et notre engagement a aller tourné de nuit.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VIDÉO -->
+    <section class="section-white">
         <div class="container">
             <div style="position: relative; width: 100%; max-width: 1200px; margin: 0 auto; padding-bottom: 56.25%;">
                 <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/w-ukrRQDGgk?si=wmFuz8-sBDJLic02" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
